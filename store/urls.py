@@ -4,4 +4,6 @@ from . import views
 
 app_name = 'store'
 
-urlpatterns: list[str] = []
+urlpatterns = [
+    path('', views.home, name='home'),
+]
