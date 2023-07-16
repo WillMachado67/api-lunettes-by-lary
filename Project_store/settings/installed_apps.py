@@ -11,4 +11,5 @@ INSTALLED_APPS = [
     'rest_framework',
     # Others apps
     'store',
+    'category'
 ]
