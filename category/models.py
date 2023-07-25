@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=25, verbose_name=_('Name'))
+    name = models.CharField(max_length=25, unique=True, verbose_name=_('Name'))
 
     def __str__(self):
         return self.name
@@ -14,7 +14,7 @@ class Category(models.Model):
 
 
 class Subcategory(models.Model):
-    name = models.CharField(max_length=25, unique=True, verbose_name=_('Name'))
+    name = models.CharField(max_length=25, verbose_name=_('Name'))
     category = models.ForeignKey(
         Category,
         on_delete=models.SET_NULL,

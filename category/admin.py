@@ -2,12 +2,15 @@ from django.contrib import admin
 
 from .models import Category, Subcategory
 
+# @admin.register(Subcategory)
+# class SubcategoryInline(admin.ModelAdmin):
+#     ...
 
-@admin.register(Subcategory)
-class SubcategoryAdmin(admin.ModelAdmin):
-    pass
+
+class SubcategoryInline(admin.StackedInline):
+    model = Subcategory
 
 
 @admin.register(Category)
-class CategoryAdmin(admin.ModelAdmin):
-    pass
+class CategoryInline(admin.ModelAdmin):
+    inlines = [SubcategoryInline]
