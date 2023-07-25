@@ -7,7 +7,7 @@ from .models import Category, Subcategory
 #     ...
 
 
-class SubcategoryInline(admin.StackedInline):
+class SubcategoryInline(admin.TabularInline):
     model = Subcategory
 
 
