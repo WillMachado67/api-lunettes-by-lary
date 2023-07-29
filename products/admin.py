@@ -1,6 +1,5 @@
 from django.contrib import admin
-
-from store.models import Details, Product
+from products.models import Details, Product
 
 
 class DetailsAdmin(admin.StackedInline):

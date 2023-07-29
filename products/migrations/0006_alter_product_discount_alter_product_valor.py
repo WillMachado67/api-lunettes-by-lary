@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('store', '0005_remove_product_associated_alter_product_discount_and_more'),
+        ('products', '0005_remove_product_associated_alter_product_discount_and_more'),
     ]
 
     operations = [
@@ -18,6 +18,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='product',
             name='valor',
-            field=models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Valor R$'),
+            field=models.DecimalField(
+                decimal_places=2, max_digits=10, verbose_name='Valor R$'),
         ),
     ]

@@ -10,7 +10,7 @@ INSTALLED_APPS = [
     # Rest framework
     'rest_framework',
     # Others apps
-    'store',
+    'products',
     'category',
     'image_admin',
 ]
