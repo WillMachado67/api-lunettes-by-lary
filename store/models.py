@@ -22,21 +22,19 @@ class Product(models.Model):
     )
     subcategory = models.ForeignKey(
         Subcategory,
-        on_delete=models.SET_NULL,
+        on_delete=models.CASCADE,
         null=True,
         blank=False,
+        limit_choices_to={'category_id': '1'},
         verbose_name=_('Subcategory')
     )
-    valor = models.FloatField(verbose_name=_('Valor'))
-    discount = models.IntegerField(verbose_name=_('Discont'))
-    price = models.FloatField(blank=True, verbose_name=_('Price'))
+    valor = models.FloatField(verbose_name=_('Valor')+' R$')
+    discount = models.IntegerField(blank=True, verbose_name=_('Discont')+' %')
+    price = models.FloatField(verbose_name=_('Price'))
     is_new_colection = models.BooleanField(
         default=False, verbose_name=_('New Colection')
     )
-    status = models.BooleanField(default=False, verbose_name=_('Status'))
-    associated = models.ManyToManyField(
-        "self", blank=True, verbose_name=_('Associated')
-    )
+    status = models.BooleanField(default=True, verbose_name=_('Status'))
 
     def __str__(self):
         return self.product_name

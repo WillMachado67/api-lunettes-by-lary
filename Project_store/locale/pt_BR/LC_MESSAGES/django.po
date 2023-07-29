@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-19 09:10-0300\n"
+"POT-Creation-Date: 2023-07-28 18:16-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Name"
 msgstr "Nome"
 
-#: .\category\models.py:12 .\category\models.py:22 .\store\models.py:43
+#: .\category\models.py:12 .\category\models.py:22 .\store\models.py:21
 msgid "Category"
 msgstr "Categoria"
 
@@ -30,7 +30,7 @@ msgstr "Categoria"
 msgid "Categorys"
 msgstr "Categorias"
 
-#: .\category\models.py:29 .\store\models.py:50
+#: .\category\models.py:29 .\store\models.py:28
 msgid "Subcategory"
 msgstr "Modelo"
 
@@ -38,90 +38,94 @@ msgstr "Modelo"
 msgid "Subcategorys"
 msgstr "Modelos"
 
+#: .\image_admin\models.py:6 .\image_admin\models.py:9
+msgid "Image Banner"
+msgstr "Imagem do Banner"
+
 #: .\store\models.py:9
-msgid "Accessories"
-msgstr "Acessorios"
-
-#: .\store\models.py:11
-msgid "Bridge"
-msgstr "Ponte"
-
-#: .\store\models.py:12
-msgid "Front"
-msgstr "Frente"
-
-#: .\store\models.py:13
-msgid "Hast"
-msgstr "Haste"
-
-#: .\store\models.py:14
-msgid "Height"
-msgstr "Altura"
-
-#: .\store\models.py:15
-msgid "Lens"
-msgstr "Lente"
-
-#: .\store\models.py:16
-msgid "Material"
-msgstr "Materiais"
-
-#: .\store\models.py:17
-msgid "Size"
-msgstr "Tamanho"
-
-#: .\store\models.py:18
-msgid "Warranty"
-msgstr "Gatantia"
-
-#: .\store\models.py:24 .\store\models.py:25 .\store\models.py:60
-msgid "Details"
-msgstr "Detalhe"
-
-#: .\store\models.py:30
 msgid "Product Name"
 msgstr "Nome do produto"
 
-#: .\store\models.py:32
+#: .\store\models.py:11
 msgid "Code"
 msgstr "Código"
 
-#: .\store\models.py:34
+#: .\store\models.py:13
 msgid "Created at"
 msgstr "Criado em"
 
-#: .\store\models.py:36
+#: .\store\models.py:15
 msgid "Description"
 msgstr "Descrição"
 
-#: .\store\models.py:52
+#: .\store\models.py:30
 msgid "Valor"
 msgstr "Valor"
 
-#: .\store\models.py:53
+#: .\store\models.py:31
 msgid "Discont"
 msgstr "Desconto"
 
-#: .\store\models.py:54
+#: .\store\models.py:32
 msgid "Price"
 msgstr "Preço"
 
-#: .\store\models.py:56
+#: .\store\models.py:34
 msgid "New Colection"
 msgstr "Nova coleção"
 
-#: .\store\models.py:58
+#: .\store\models.py:36
 msgid "Status"
 msgstr "Ativo"
 
-#: .\store\models.py:63
+#: .\store\models.py:38
 msgid "Associated"
 msgstr "Associados"
 
-#: .\store\models.py:70
+#: .\store\models.py:56
 msgid "Product"
 msgstr "Produto"
 
-#: .\store\models.py:71
+#: .\store\models.py:57
 msgid "Products"
 msgstr "Produtos"
+
+#: .\store\models.py:62
+msgid "Accessories"
+msgstr "Acessorios"
+
+#: .\store\models.py:64
+msgid "Bridge"
+msgstr "Ponte"
+
+#: .\store\models.py:65
+msgid "Front"
+msgstr "Frente"
+
+#: .\store\models.py:66
+msgid "Hast"
+msgstr "Haste"
+
+#: .\store\models.py:67
+msgid "Height"
+msgstr "Altura"
+
+#: .\store\models.py:68
+msgid "Lens"
+msgstr "Lente"
+
+#: .\store\models.py:69
+msgid "Material"
+msgstr "Materiais"
+
+#: .\store\models.py:70
+msgid "Size"
+msgstr "Tamanho"
+
+#: .\store\models.py:71
+msgid "Warranty"
+msgstr "Gatantia"
+
+#: .\store\models.py:73 .\store\models.py:80 .\store\models.py:81
+msgid "Details"
+msgstr "Detalhe"

@@ -2,13 +2,10 @@ from django.contrib import admin
 
 from .models import Category, Subcategory
 
-# @admin.register(Subcategory)
-# class SubcategoryInline(admin.ModelAdmin):
-#     ...
-
 
 class SubcategoryInline(admin.TabularInline):
     model = Subcategory
+    extra = 1
 
 
 @admin.register(Category)
