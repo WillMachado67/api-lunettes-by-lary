@@ -1,15 +1,20 @@
 from rest_framework import serializers
 
-from products.models import Product
+from products.models import Details, Product
+
+
+class DetailsSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Details
+        fields = '__all__'
 
 
 class ProductsSerializer(serializers.ModelSerializer):
+    detail = DetailsSerializers()
+
     class Meta:
         model = Product
-        fields = [
-            'id', 'product_name', 'code', 'description', 'category',
-            'subcategory', 'price',
-        ]
+        fields = '__all__'
 
     category = serializers.StringRelatedField(
         read_only=True,

@@ -1,7 +1,25 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from category.models import Category, Subcategory
+from category.models import Category
+
+
+class Details(models.Model):
+    accessories = models.CharField(
+        max_length=150, blank=True, verbose_name=_('Accessories')
+    )
+    bridge = models.FloatField(verbose_name=_('Bridge'))
+    front = models.FloatField(verbose_name=_('Front'))
+    hast = models.FloatField(verbose_name=_('Hast'))
+    height = models.FloatField(verbose_name=_('Height'))
+    lens = models.CharField(max_length=32, verbose_name=_('Lens'))
+    material = models.CharField(max_length=32, verbose_name=_('Material'))
+    size = models.CharField(max_length=32, verbose_name=_('Size'))
+    warranty = models.IntegerField(verbose_name=_('Warranty'))
+
+    class Meta:
+        verbose_name = _('Detail')
+        verbose_name_plural = _('Details')
 
 
 class ProductManager(models.Manager):
@@ -27,7 +45,7 @@ class Product(models.Model):
         verbose_name=_('Category')
     )
     subcategory = models.ForeignKey(
-        Subcategory,
+        'category.Subcategory',
         on_delete=models.CASCADE,
         null=True,
         blank=False,
@@ -35,12 +53,15 @@ class Product(models.Model):
         verbose_name=_('Subcategory')
     )
     valor = models.FloatField(verbose_name=_('Valor')+' R$')
-    discount = models.IntegerField(blank=True, verbose_name=_('Discont')+' %')
+    discount = models.IntegerField(default=0, verbose_name=_('Discont')+' %')
     price = models.FloatField(verbose_name=_('Price'))
     is_new_colection = models.BooleanField(
         default=False, verbose_name=_('New Colection')
     )
     status = models.BooleanField(default=True, verbose_name=_('Status'))
+    detail = models.OneToOneField(
+        Details, on_delete=models.CASCADE, verbose_name=_('Detail')
+    )
 
     def __str__(self):
         return self.product_name
@@ -59,24 +80,3 @@ class Product(models.Model):
     class Meta:
         verbose_name = _('Product')
         verbose_name_plural = _('Products')
-
-
-class Details(models.Model):
-    accessories = models.CharField(
-        max_length=150, blank=True, verbose_name=_('Accessories')
-    )
-    bridge = models.FloatField(verbose_name=_('Bridge'))
-    front = models.FloatField(verbose_name=_('Front'))
-    hast = models.FloatField(verbose_name=_('Hast'))
-    height = models.FloatField(verbose_name=_('Height'))
-    lens = models.CharField(max_length=32, verbose_name=_('Lens'))
-    material = models.CharField(max_length=32, verbose_name=_('Material'))
-    size = models.CharField(max_length=32, verbose_name=_('Size'))
-    warranty = models.IntegerField(verbose_name=_('Warranty'))
-    detail = models.OneToOneField(
-        Product, on_delete=models.CASCADE, verbose_name=_('Detail')
-    )
-
-    class Meta:
-        verbose_name = _('Detail')
-        verbose_name_plural = _('Details')
