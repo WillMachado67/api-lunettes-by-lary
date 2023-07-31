@@ -6,7 +6,10 @@ from products.models import Details, Product
 class DetailsSerializers(serializers.ModelSerializer):
     class Meta:
         model = Details
-        fields = '__all__'
+        fields = [
+            'accessories', 'bridge', 'front', 'hast', 'height', 'lens',
+            'material', 'size', 'warranty',
+        ]
 
 
 class ProductsSerializer(serializers.ModelSerializer):
@@ -14,7 +17,10 @@ class ProductsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = [
+            'product_name', 'code', 'description', 'detail', 'category',
+            'subcategory', 'price', 'detail',
+        ]
 
     category = serializers.StringRelatedField(
         read_only=True,
