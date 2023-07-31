@@ -4,7 +4,13 @@ from django.utils.translation import gettext_lazy as _
 from category.models import Category, Subcategory
 
 
+class ProductManager(models.Manager):
+    def get_published(self):
+        return self.filter(status=True)
+
+
 class Product(models.Model):
+    objects = ProductManager()
     product_name = models.CharField(
         max_length=25, verbose_name=_('Product Name')
     )
@@ -25,7 +31,7 @@ class Product(models.Model):
         on_delete=models.CASCADE,
         null=True,
         blank=False,
-        limit_choices_to={'category_id': '1'},
+        limit_choices_to={},
         verbose_name=_('Subcategory')
     )
     valor = models.FloatField(verbose_name=_('Valor')+' R$')
@@ -67,13 +73,10 @@ class Details(models.Model):
     material = models.CharField(max_length=32, verbose_name=_('Material'))
     size = models.CharField(max_length=32, verbose_name=_('Size'))
     warranty = models.IntegerField(verbose_name=_('Warranty'))
-    Product = models.OneToOneField(
-        Product, on_delete=models.CASCADE, verbose_name=_('Details')
+    detail = models.OneToOneField(
+        Product, on_delete=models.CASCADE, verbose_name=_('Detail')
     )
 
-    def __str__(self):
-        return self.accessories
-
     class Meta:
-        verbose_name = _('Details')
+        verbose_name = _('Detail')
         verbose_name_plural = _('Details')

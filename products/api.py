@@ -5,6 +5,6 @@ from products.serializers import ProductsSerializer
 
 
 class ProductsApiv1ViewSet(ModelViewSet):
-    queryset = Product.objects.all()
+    queryset = Product.objects.get_published()
     serializer_class = ProductsSerializer
     http_method_names = ['get']
