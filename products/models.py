@@ -24,7 +24,9 @@ class Details(models.Model):
 
 class ProductManager(models.Manager):
     def get_published(self):
-        return self.filter(status=True)
+        return self.filter(status=True).select_related(
+            'category', 'subcategory',
+        )
 
 
 class Product(models.Model):

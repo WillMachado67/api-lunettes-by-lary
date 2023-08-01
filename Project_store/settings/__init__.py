@@ -8,3 +8,4 @@ from .i18n import *
 from .templates import *
 
 from .rest_framework import *  # isort:skip
+from .debug_toolbar import *  # isort:skip

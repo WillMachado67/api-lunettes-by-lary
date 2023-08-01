@@ -2,12 +2,9 @@ from django.contrib import admin
 
 from products.models import Details, Product
 
-
-@admin.register(Details)
-class DetailsAdmin(admin.ModelAdmin):
-    # model = Details
-    # min_num = 1
-    ...
+# @admin.register(Details)
+# class DetailsAdmin(admin.ModelAdmin):
+#     ...
 
 
 @admin.register(Product)
