@@ -1,3 +1,4 @@
+from django import forms
 from django.contrib import admin
 
 from products.models import Details, Product
@@ -7,10 +8,23 @@ from products.models import Details, Product
 #     ...
 
 
+class ProductAdminForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super(ProductAdminForm, self).__init__(*args, **kwargs)
+        category_selected = self.instance.category.name
+        self.fields['subcategory'].queryset = self.fields['subcategory'].queryset.filter(
+            category__name=category_selected
+        )
+
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     readonly_fields = ['price']
-    # inlines = [DetailsAdmin]
+    form = ProductAdminForm
     list_display = [
         'product_name',
         'code',
