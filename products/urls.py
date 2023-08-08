@@ -9,7 +9,7 @@ products_api_v1_router = SimpleRouter()
 products_api_v1_router.register(
     'products/api/v1',
     api.ProductsApiv1ViewSet,
-    basename='products',
+    basename='product-api',
 )
 print(products_api_v1_router.urls)
 urlpatterns = [

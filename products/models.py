@@ -51,7 +51,7 @@ class Product(models.Model):
         on_delete=models.CASCADE,
         null=True,
         blank=False,
-        limit_choices_to={},
+        limit_choices_to={'category__id': 2},
         verbose_name=_('Subcategory')
     )
     valor = models.FloatField(verbose_name=_('Valor')+' R$')
@@ -64,6 +64,7 @@ class Product(models.Model):
     detail = models.OneToOneField(
         Details, on_delete=models.CASCADE, verbose_name=_('Detail')
     )
+    featured_products = models.BooleanField(default=False)
 
     def __str__(self):
         return self.product_name
