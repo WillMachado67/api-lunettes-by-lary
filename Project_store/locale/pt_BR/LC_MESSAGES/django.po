@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-13 03:43-0300\n"
+"POT-Creation-Date: 2023-08-13 03:54-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,9 +42,13 @@ msgstr "Modelos"
 msgid "Image Banner"
 msgstr "Imagem do Banner"
 
-#: .\products\admin.py:41
+#: .\products\admin.py:42
 msgid "Product Information"
 msgstr "Informação do Produto"
+
+#: .\products\admin.py:53
+msgid "Calculated Price"
+msgstr "Calculo do Preço"
 
 #: .\products\models.py:17
 msgid "Product Name"

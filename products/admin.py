@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 from products.models import Details, Product
 
 
-class DetailInline(admin.StackedInline):
+class DetailsInline(admin.StackedInline):
     model = Details
     extra = 1
     min_num = 1
@@ -17,6 +17,8 @@ class ProductAdmin(admin.ModelAdmin):
             'https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js',
             'admin/js/script.js',
         )
+
+    inlines = [DetailsInline]
 
     admin_site = admin.AdminSite
     admin_site.site_title = "Lunettes"
@@ -32,7 +34,6 @@ class ProductAdmin(admin.ModelAdmin):
         'is_new_collection',
         'price',
     ]
-    inlines = [DetailInline]
     list_display_links = ['product_name', 'code']
     list_editable = ['status', 'is_new_collection']
     list_filter = ['category', 'subcategory', 'status', 'is_new_collection']
@@ -47,9 +48,16 @@ class ProductAdmin(admin.ModelAdmin):
                 'status',
                 'is_new_collection',
                 'featured_products',
+            ],
+        }),
+        (_('Calculated Price'), {
+            'fields': [
                 'value',
                 'discount',
                 'price',
             ],
         }),
     ]
+
+
+admin.site.register(Details)
