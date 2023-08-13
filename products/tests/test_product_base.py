@@ -16,10 +16,10 @@ class ProductMixin:
         product_name='Glass',
         code='123',
         description='Description of the product',
-        valor=100.00,
+        value=100.00,
         discount=10,
         price=100.00,
-        is_new_colection=False,
+        is_new_collection=False,
         status=True,
     ):
         if category_data is None:
@@ -34,9 +34,9 @@ class ProductMixin:
             product_name=product_name,
             code=code,
             description=description,
-            valor=valor,
+            value=value,
             discount=discount,
             price=price,
-            is_new_colection=is_new_colection,
+            is_new_collection=is_new_collection,
             status=status,
         )

@@ -1,11 +1,13 @@
-from django import forms
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 from products.models import Details, Product
 
-# @admin.register(Details)
-# class DetailsAdmin(admin.ModelAdmin):
-#     ...
+
+class DetailInline(admin.StackedInline):
+    model = Details
+    extra = 1
+    min_num = 1
 
 
 @admin.register(Product)
@@ -15,17 +17,39 @@ class ProductAdmin(admin.ModelAdmin):
             'https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js',
             'admin/js/script.js',
         )
-    readonly_fields = ['price']
+
+    admin_site = admin.AdminSite
+    admin_site.site_title = "Lunettes"
+    admin_site.site_header = "Lunettes Admin"
+    admin_site.index_title = "Dashboard"
+
     list_display = [
         'product_name',
         'code',
         'category',
         'subcategory',
         'status',
-        'is_new_colection',
+        'is_new_collection',
         'price',
     ]
+    inlines = [DetailInline]
     list_display_links = ['product_name', 'code']
-    list_editable = ['status', 'is_new_colection']
-    list_filter = ['category', 'subcategory', 'status', 'is_new_colection']
+    list_editable = ['status', 'is_new_collection']
+    list_filter = ['category', 'subcategory', 'status', 'is_new_collection']
     search_fields = ['product_name', 'code']
+    fieldsets = [
+        (_('Product Information'), {
+            'fields': [
+                'product_name',
+                'code',
+                'category',
+                'subcategory',
+                'status',
+                'is_new_collection',
+                'featured_products',
+                'value',
+                'discount',
+                'price',
+            ],
+        }),
+    ]
