@@ -58,6 +58,3 @@ class ProductAdmin(admin.ModelAdmin):
             ],
         }),
     ]
-
-
-admin.site.register(Details)
