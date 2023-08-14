@@ -16,7 +16,9 @@ class Details(models.Model):
     lens = models.CharField(max_length=32, verbose_name=_('Lens'))
     material = models.CharField(max_length=32, verbose_name=_('Material'))
     size = models.CharField(max_length=32, verbose_name=_('Size'))
-    warranty = models.IntegerField(verbose_name=_('Warranty'))
+    warranty = models.IntegerField(
+        default=6, verbose_name=_('Warranty')
+    )
 
     class Meta:
         verbose_name = _('Detail')

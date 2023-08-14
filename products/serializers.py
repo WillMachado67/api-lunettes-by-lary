@@ -3,7 +3,7 @@ from rest_framework import serializers
 from products.models import Details, Product
 
 
-class DetailsSerializers(serializers.ModelSerializer):
+class DetailsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Details
         fields = [
@@ -13,13 +13,13 @@ class DetailsSerializers(serializers.ModelSerializer):
 
 
 class ProductsSerializer(serializers.ModelSerializer):
-    detail = DetailsSerializers()
+    details = DetailsSerializer()
 
     class Meta:
         model = Product
         fields = [
-            'product_name', 'code', 'description', 'detail', 'category',
-            'subcategory', 'price', 'detail',
+            'product_name', 'code', 'description', 'category',
+            'subcategory', 'value', 'discount', 'price', 'details',
         ]
 
     category = serializers.StringRelatedField(
