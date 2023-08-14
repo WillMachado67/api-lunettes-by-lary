@@ -4,7 +4,18 @@ from products.models import Product
 from products.serializers import ProductsSerializer
 
 
-class ProductsApiv1ViewSet(ModelViewSet):
-    queryset = Product.objects.get_published()
+class ProductsApiV1Base(ModelViewSet):
     serializer_class = ProductsSerializer
     http_method_names = ['get']
+
+
+class ProductsApiv1ViewSet(ProductsApiV1Base):
+    queryset = Product.objects.get_published()
+
+
+class NewCollectionApiv1ViewSet(ProductsApiV1Base):
+    queryset = Product.objects.get_new_collection()
+
+
+class FeaturedProductsApiv1ViewSet(ProductsApiV1Base):
+    queryset = Product.objects.get_featured_products()

@@ -12,6 +12,12 @@ class ProductManager(models.Manager):
             'category', 'subcategory',
         )
 
+    def get_new_collection(self):
+        return self.get_published().filter(is_new_collection=True)
+
+    def get_featured_products(self):
+        return self.get_published().filter(featured_products=True)
+
 
 class Product(models.Model):
     objects = ProductManager()
