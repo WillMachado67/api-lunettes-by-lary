@@ -5,7 +5,6 @@ from django.utils.translation import gettext_lazy as _
 class Banner(models.Model):
     name = models.CharField(
         max_length=25,
-        unique=True,
         default=_('Image Banner'),
     )
     image_banner = models.ImageField(
