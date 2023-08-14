@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -35,9 +37,13 @@ class Product(models.Model):
         blank=False,
         verbose_name=_('Subcategory')
     )
-    value = models.FloatField(verbose_name=_('Value $'))
+    value = models.DecimalField(
+        max_digits=10, decimal_places=2, verbose_name=_('Value $')
+    )
     discount = models.IntegerField(default=0, verbose_name=_('Discont')+' %')
-    price = models.FloatField(blank=True, verbose_name=_('Price'))
+    price = models.DecimalField(
+        max_digits=10, decimal_places=2, blank=True, verbose_name=_('Price')
+    )
     is_new_collection = models.BooleanField(
         default=False, verbose_name=_('New Collection')
     )
@@ -51,7 +57,9 @@ class Product(models.Model):
 
     def calculate_price(self):
         if self.discount is not None:
-            self.price = self.value - (self.value * (self.discount / 100))
+            self.price = self.value - (
+                self.value * (Decimal(self.discount) / 100)
+            )
         else:
             self.price = self.value
 
