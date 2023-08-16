@@ -7,10 +7,15 @@ class Banner(models.Model):
         max_length=25,
         default=_('Image Banner'),
     )
-    image_banner = models.ImageField(
-        upload_to='cover/banner/',
-        verbose_name=_('Image Banner')
+    image_banner_desktop = models.ImageField(
+        upload_to='cover/banner/desktop',
+        verbose_name=_('Image Banner Desktop')
+    )
+    image_banner_mobile = models.ImageField(
+        upload_to='cover/banner/mobile',
+        null=True,
+        verbose_name=_('Image Banner Mobile'),
     )
 
     def __str__(self):
-        return self.name
+        return str(self.name)

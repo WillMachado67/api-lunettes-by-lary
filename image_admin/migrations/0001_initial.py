@@ -14,9 +14,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Banner',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(default='Image Banner', max_length=25)),
-                ('image_banner', models.ImageField(upload_to='cover/banner/', verbose_name='Image Banner')),
+                ('image_banner_desktop', models.ImageField(
+                    upload_to='cover/banner/', verbose_name='Image Banner')),
             ],
         ),
     ]
