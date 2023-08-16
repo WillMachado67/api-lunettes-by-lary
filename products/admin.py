@@ -31,12 +31,18 @@ class ProductAdmin(admin.ModelAdmin):
         'category',
         'subcategory',
         'status',
-        'is_new_collection',
         'price',
+        # 'is_new_collection',
+        # 'featured_products',
     ]
     list_display_links = ['product_name', 'code']
-    list_editable = ['status', 'is_new_collection']
-    list_filter = ['category', 'subcategory', 'status', 'is_new_collection']
+    list_filter = [
+        'category',
+        'subcategory',
+        'status',
+        'is_new_collection',
+        'featured_products',
+    ]
     search_fields = ['product_name', 'code']
     fieldsets = [
         (_('Product Information'), {
@@ -58,3 +64,4 @@ class ProductAdmin(admin.ModelAdmin):
             ],
         }),
     ]
+    paginator_per_page = 10
