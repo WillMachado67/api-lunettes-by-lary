@@ -3,7 +3,7 @@ from decimal import Decimal
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from category.models import Category
+from category.models import Category, Subcategory
 
 
 class ProductManager(models.Manager):
@@ -37,7 +37,7 @@ class Product(models.Model):
         verbose_name=_('Category')
     )
     subcategory = models.ForeignKey(
-        'category.Subcategory',
+        Subcategory,
         on_delete=models.CASCADE,
         null=True,
         blank=False,
