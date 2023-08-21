@@ -32,8 +32,6 @@ class ProductAdmin(admin.ModelAdmin):
         'subcategory',
         'status',
         'price',
-        # 'is_new_collection',
-        # 'featured_products',
     ]
     list_display_links = ['product_name', 'code']
     list_filter = [

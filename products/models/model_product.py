@@ -8,7 +8,7 @@ from category.models import Category, Subcategory
 
 class ProductManager(models.Manager):
     def get_published(self):
-        return self.filter(status=True).select_related(
+        return self.filter(status=True).order_by('-id').select_related(
             'category', 'subcategory',
         )
 
