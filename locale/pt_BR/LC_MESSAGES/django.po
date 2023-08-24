@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-16 17:06-0300\n"
+"POT-Creation-Date: 2023-08-23 18:30-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: .\category\models.py:6 .\category\models.py:17
+#: .\image_admin\models\model_image.py:8
 msgid "Name"
 msgstr "Nome"
 
@@ -39,23 +40,59 @@ msgstr "Modelo"
 msgid "Subcategorys"
 msgstr "Modelos"
 
-#: .\image_admin\models.py:8
+#: .\image_admin\models\model_image.py:9
+msgid "Image Desktop"
+msgstr "Imagem Computador"
+
+#: .\image_admin\models\model_image.py:10
+msgid "Image Mobile"
+msgstr "Imagem Celular"
+
+#: .\image_admin\models\model_image.py:16
 msgid "Image Banner"
 msgstr "Imagem do Banner"
 
-#: .\image_admin\models.py:12
-msgid "Image Banner Desktop"
-msgstr "Imagem do Banner Computador"
+#: .\image_admin\models\model_image.py:53
+msgid "Image Personalized Service"
+msgstr "Imagem Serviço Personalizado"
 
-#: .\image_admin\models.py:17
-msgid "Image Banner Mobile"
-msgstr "Imagem do Banner Celular"
+#: .\image_admin\models\model_image.py:67
+msgid "Personalized Service"
+msgstr "Serviço Personalizado"
 
-#: .\products\admin.py:42
+#: .\image_admin\models\model_image.py:68
+msgid "Personalized Services"
+msgstr "Serviços Personalizados"
+
+#: .\image_admin\models\model_image.py:95
+msgid "Related Product"
+msgstr "Produto Relacionado"
+
+#: .\image_admin\models\model_image.py:98
+msgid "Image 1"
+msgstr "Imagem 1"
+
+#: .\image_admin\models\model_image.py:101
+msgid "Image 2"
+msgstr "Imagem 2"
+
+#: .\image_admin\models\model_image.py:104
+msgid "Image 3"
+msgstr "Imagem 3"
+
+#: .\image_admin\models\model_image.py:108
+msgid "Image Product"
+msgstr "Imagen do Produto"
+
+#: .\image_admin\models\model_image.py:109
+msgid "Image Products"
+msgstr "imagens dos Produtos"
+
+#: .\products\admin.py:46
 msgid "Product Information"
 msgstr "Informação do Produto"
 
-#: .\products\admin.py:53
+#: .\products\admin.py:57
 msgid "Calculated Price"
 msgstr "Calculo do Preço"
 

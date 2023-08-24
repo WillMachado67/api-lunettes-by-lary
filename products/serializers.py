@@ -1,6 +1,15 @@
 from rest_framework import serializers
 
+from image_admin.models import ImageProduct
 from products.models import Details, Product
+
+
+class ImageProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ImageProduct
+        fields = [
+            'image_1', 'image_2', 'image_3',
+        ]
 
 
 class DetailsSerializer(serializers.ModelSerializer):
@@ -14,11 +23,12 @@ class DetailsSerializer(serializers.ModelSerializer):
 
 class ProductsSerializer(serializers.ModelSerializer):
     details = DetailsSerializer()
+    imageproduct = ImageProductSerializer()
 
     class Meta:
         model = Product
         fields = [
-            'product_name', 'code', 'description', 'category',
+            'product_name', 'imageproduct', 'code', 'description', 'category',
             'subcategory', 'value', 'discount', 'price', 'details',
         ]
 
