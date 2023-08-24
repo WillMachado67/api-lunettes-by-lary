@@ -3,7 +3,7 @@ import os
 from django.db.models.signals import pre_delete, pre_save
 from django.dispatch import receiver
 
-from .models import Banner, PersonalizedService
+from .models import Banner, ImageProduct, PersonalizedService
 
 
 def delete_image(instance, field_name):
@@ -38,3 +38,22 @@ create_image_update_receiver(Banner)
 
 create_image_delete_receiver(PersonalizedService)
 create_image_update_receiver(PersonalizedService)
+
+
+@receiver(pre_delete, sender=ImageProduct)
+def image_delete(sender, instance, **kwargs):
+    delete_image(instance, 'image_1')
+    delete_image(instance, 'image_2')
+    delete_image(instance, 'image_3')
+
+
+@receiver(pre_save, sender=ImageProduct)
+def image_update(sender, instance, **kwargs):
+    if instance.pk:
+        old_instance = sender.objects.get(pk=instance.pk)
+        if old_instance.image_1 != instance.image_1:
+            delete_image(old_instance, 'image_1')
+        if old_instance.image_2 != instance.image_2:
+            delete_image(old_instance, 'image_2')
+        if old_instance.image_3 != instance.image_3:
+            delete_image(old_instance, 'image_3')

@@ -90,7 +90,7 @@ class PersonalizedService(BaseImageMIxin, models.Model):
         return saved
 
 
-class ImageProduct(models.Model):
+class ImageProduct(BaseImageMIxin, models.Model):
     related_product = models.OneToOneField(
         Product,
         on_delete=models.CASCADE,

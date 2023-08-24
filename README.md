@@ -7,11 +7,11 @@ GERAL:
 - [ ] Adm imagens carrosel # Lunettes By Lary;
 - [X] Adm das categorias e subcategorias do site;
 - [X] Adm dos usuários administradores do CMS;
-- [ ] Adm dos produtos
-- [ ] Adm das imagens
+- [X] Adm dos produtos
+- [X] Adm das imagens
 
 
 HOME
-- [ ] Adm imagem do banner - (Mobile e Desktop)
-- [ ] Adm atendimento personalizado - (Mobile e Desktop)
-- [ ] Adm produtos destaques
+- [X] Adm imagem do banner - (Mobile e Desktop)
+- [X] Adm atendimento personalizado - (Mobile e Desktop)
+- [X] Adm produtos destaques
