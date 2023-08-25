@@ -7,7 +7,10 @@ class Details(models.Model):
         'Product', on_delete=models.CASCADE,
     )
     accessories = models.CharField(
-        max_length=150, blank=True, verbose_name=_('Accessories')
+        max_length=150,
+        blank=True,
+        default='Estojo e flanela',
+        verbose_name=_('Accessories')
     )
     bridge = models.FloatField(verbose_name=_('Bridge'))
     front = models.FloatField(verbose_name=_('Front'))
