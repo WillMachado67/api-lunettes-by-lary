@@ -1,3 +1,4 @@
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
 from products.models import Product
@@ -6,6 +7,7 @@ from products.serializers import ProductsSerializer
 
 class ProductsApiV1Base(ModelViewSet):
     serializer_class = ProductsSerializer
+    permission_classes = [IsAuthenticated]
     http_method_names = ['get']
 
 
