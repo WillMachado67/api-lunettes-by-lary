@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-23 18:30-0300\n"
+"POT-Creation-Date: 2023-08-30 07:06-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,10 +52,6 @@ msgstr "Imagem Celular"
 msgid "Image Banner"
 msgstr "Imagem do Banner"
 
-#: .\image_admin\models\model_image.py:53
-msgid "Image Personalized Service"
-msgstr "Imagem Serviço Personalizado"
-
 #: .\image_admin\models\model_image.py:67
 msgid "Personalized Service"
 msgstr "Serviço Personalizado"
@@ -96,47 +92,47 @@ msgstr "Informação do Produto"
 msgid "Calculated Price"
 msgstr "Calculo do Preço"
 
-#: .\products\models\model_details.py:10
+#: .\products\models\model_details.py:13
 msgid "Accessories"
 msgstr "Acessorios"
 
-#: .\products\models\model_details.py:12
+#: .\products\models\model_details.py:15
 msgid "Bridge"
 msgstr "Ponte"
 
-#: .\products\models\model_details.py:13
+#: .\products\models\model_details.py:16
 msgid "Front"
 msgstr "Frente"
 
-#: .\products\models\model_details.py:14
+#: .\products\models\model_details.py:17
 msgid "Hast"
 msgstr "Haste"
 
-#: .\products\models\model_details.py:15
+#: .\products\models\model_details.py:18
 msgid "Height"
 msgstr "Altura"
 
-#: .\products\models\model_details.py:16
+#: .\products\models\model_details.py:19
 msgid "Lens"
 msgstr "Lente"
 
-#: .\products\models\model_details.py:17
+#: .\products\models\model_details.py:20
 msgid "Material"
 msgstr "Materiais"
 
-#: .\products\models\model_details.py:18
+#: .\products\models\model_details.py:21
 msgid "Size"
 msgstr "Tamanho"
 
-#: .\products\models\model_details.py:20
+#: .\products\models\model_details.py:23
 msgid "Warranty"
 msgstr "Garantia"
 
-#: .\products\models\model_details.py:24
+#: .\products\models\model_details.py:27
 msgid "Detail"
 msgstr "Detalhe"
 
-#: .\products\models\model_details.py:25
+#: .\products\models\model_details.py:28
 msgid "Details"
 msgstr "Detalhes"
 
