@@ -61,5 +61,10 @@ class ProductAdmin(admin.ModelAdmin):
                 'price',
             ],
         }),
+        (_('Related Products'), {
+            'fields': [
+                'related_products',
+            ]
+        })
     ]
     paginator_per_page = 10

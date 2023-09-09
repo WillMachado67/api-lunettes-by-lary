@@ -28,6 +28,7 @@ class ProductsSerializer(serializers.ModelSerializer):
         fields = [
             'product_name', 'imageproduct', 'code', 'description', 'category',
             'subcategory', 'value', 'discount', 'price', 'details',
+            'related_products',
         ]
 
     category = serializers.StringRelatedField(

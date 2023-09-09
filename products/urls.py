@@ -29,7 +29,7 @@ feactured_products_api_v1_router.register(
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('get_subcategories', views.get_subcategories, name='get_subcategories'),
+    path('get_subcategories/', views.get_subcategories, name='get_subcategories'),
 ]
 
 urlpatterns += products_api_v1_router.urls

@@ -35,3 +35,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
     initialize();
 });
+
+$(document).ready(function() {
+    $('#id_category').change(function() {
+        var category_id = $(this).val();
+        console.log("🚀 ~ category_id:", category_id)
+        $.ajax({
+            url: '/get_subcategories/',
+            data: {
+                'category_id': category_id
+            },
+            dataType: 'json',
+            success: function(data) {
+                console.log('Success!!!')
+                var subcategoriesSelect = $('#id_subcategory')
+                subcategoriesSelect.empty();
+                $.each(data.subcategories, function(index, subcategory) {
+                    subcategoriesSelect.append($('<option>', {
+                        value: subcategory.id,
+                        text: subcategory.name
+                    }));
+                });
+            }
+        });
+    });
+});

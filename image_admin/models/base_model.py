@@ -14,6 +14,7 @@ class BaseImageMIxin:
 
         if original_width <= new_width:
             image_pillow.close()
+            os.remove(image_full_path)
             return
 
         new_height = round((new_width * original_height) / original_width)

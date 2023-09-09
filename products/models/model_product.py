@@ -1,9 +1,10 @@
 from decimal import Decimal
 
+from django.contrib import admin
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from category.models import Category, Subcategory
+from category.models import Category
 
 
 class ProductManager(models.Manager):
@@ -37,7 +38,7 @@ class Product(models.Model):
         verbose_name=_('Category')
     )
     subcategory = models.ForeignKey(
-        Subcategory,
+        'category.Subcategory',
         on_delete=models.CASCADE,
         null=True,
         blank=False,
@@ -56,6 +57,9 @@ class Product(models.Model):
     status = models.BooleanField(default=True, verbose_name=_('Status'))
     featured_products = models.BooleanField(
         default=False, verbose_name=_('Featured Products')
+    )
+    related_products = models.ManyToManyField(
+        'self', symmetrical=False, verbose_name=_('Related Products'),
     )
 
     def __str__(self):
