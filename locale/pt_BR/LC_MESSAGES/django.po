@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-30 07:06-0300\n"
+"POT-Creation-Date: 2023-10-20 20:06-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgid "Name"
 msgstr "Nome"
 
 #: .\category\models.py:12 .\category\models.py:22
-#: .\products\models\model_product.py:37
+#: .\products\models\model_product.py:38
 msgid "Category"
 msgstr "Categoria"
 
@@ -32,7 +32,7 @@ msgstr "Categoria"
 msgid "Categorys"
 msgstr "Categorias"
 
-#: .\category\models.py:29 .\products\models\model_product.py:44
+#: .\category\models.py:29 .\products\models\model_product.py:45
 msgid "Subcategory"
 msgstr "Modelo"
 
@@ -84,6 +84,17 @@ msgstr "Imagen do Produto"
 msgid "Image Products"
 msgstr "imagens dos Produtos"
 
+#: .\image_admin\models\model_image.py:120
+#: .\image_admin\models\model_image.py:127
+#, fuzzy
+#| msgid "Image Carousel"
+msgid "Image Carousel"
+msgstr "imagens do Carrossel"
+
+#: .\image_admin\models\model_image.py:128
+msgid "Image Carousels"
+msgstr "imagens do Carrossel"
+
 #: .\products\admin.py:46
 msgid "Product Information"
 msgstr "Informação do Produto"
@@ -91,6 +102,12 @@ msgstr "Informação do Produto"
 #: .\products\admin.py:57
 msgid "Calculated Price"
 msgstr "Calculo do Preço"
+
+#: .\products\admin.py:64 .\products\models\model_product.py:62
+#, fuzzy
+#| msgid "Related Product"
+msgid "Related Products"
+msgstr "Produto Relacionado"
 
 #: .\products\models\model_details.py:13
 msgid "Accessories"
@@ -136,50 +153,50 @@ msgstr "Detalhe"
 msgid "Details"
 msgstr "Detalhes"
 
-#: .\products\models\model_product.py:25
+#: .\products\models\model_product.py:26
 msgid "Product Name"
 msgstr "Nome do produto"
 
-#: .\products\models\model_product.py:27
+#: .\products\models\model_product.py:28
 msgid "Code"
 msgstr "Código"
 
-#: .\products\models\model_product.py:29
+#: .\products\models\model_product.py:30
 msgid "Created at"
 msgstr "Criado em"
 
-#: .\products\models\model_product.py:31
+#: .\products\models\model_product.py:32
 msgid "Description"
 msgstr "Descrição"
 
-#: .\products\models\model_product.py:47
+#: .\products\models\model_product.py:48
 msgid "Value $"
 msgstr "Valor R$"
 
-#: .\products\models\model_product.py:49
+#: .\products\models\model_product.py:50
 msgid "Discont"
 msgstr "Desconto"
 
-#: .\products\models\model_product.py:51
+#: .\products\models\model_product.py:52
 msgid "Price"
 msgstr "Preço"
 
-#: .\products\models\model_product.py:54
+#: .\products\models\model_product.py:55
 msgid "New Collection"
 msgstr "Nova coleção"
 
-#: .\products\models\model_product.py:56
+#: .\products\models\model_product.py:57
 msgid "Status"
 msgstr "Ativo"
 
-#: .\products\models\model_product.py:58
+#: .\products\models\model_product.py:59
 msgid "Featured Products"
 msgstr "Produtos em destaques"
 
-#: .\products\models\model_product.py:77
+#: .\products\models\model_product.py:81
 msgid "Product"
 msgstr "Produto"
 
-#: .\products\models\model_product.py:78
+#: .\products\models\model_product.py:82
 msgid "Products"
 msgstr "Produtos"

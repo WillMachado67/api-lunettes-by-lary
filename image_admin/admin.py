@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models.model_image import Banner, ImageProduct, PersonalizedService
+from .models.model_image import Banner, ImageProduct, PersonalizedService, ImageCarousel
 
 
 @admin.register(Banner)
@@ -20,3 +20,9 @@ class PersonalizedServiceAdmin(admin.ModelAdmin):
 @admin.register(ImageProduct)
 class ImageProductAdmin(admin.ModelAdmin):
     list_display = ['related_product']
+
+
+@admin.register(ImageCarousel)
+class CarrouselAdmin(admin.ModelAdmin):
+    list_display = ['name']
+    fieldsets = [(None, {'fields': ['name', 'image_carousel']})]

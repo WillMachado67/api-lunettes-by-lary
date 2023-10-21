@@ -107,3 +107,22 @@ class ImageProduct(BaseImageMIxin, models.Model):
     class Meta:
         verbose_name = _('Image Product')
         verbose_name_plural = _('Image Products')
+
+
+class ImageCarousel(BaseImageMIxin, models.Model):
+    name = models.CharField(
+        max_length=25,
+        default='Image Carousel',
+        verbose_name=verbose_name_base,
+    )
+    image_carousel = models.ImageField(
+        upload_to='cover/carousel',
+        verbose_name=_('Image Carousel'),
+    )
+
+    def __str__(self):
+        return str(self.name)
+
+    class Meta:
+        verbose_name = _('Image Carousel')
+        verbose_name_plural = _('Image Carousels')
