@@ -4,7 +4,7 @@ Aqui temos a api do admin da Lunnetes By Lary
 ## Ultimas updates
 
 GERAL:
-- [ ] Adm imagens carrosel # Lunettes By Lary;
+- [X] Adm imagens carrosel # Lunettes By Lary;
 - [X] Adm das categorias e subcategorias do site;
 - [X] Adm dos usuários administradores do CMS;
 - [X] Adm dos produtos

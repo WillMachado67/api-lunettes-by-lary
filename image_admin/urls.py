@@ -29,5 +29,3 @@ urlpatterns = []
 urlpatterns += image_banner_api_v1_router.urls
 urlpatterns += image_personalized_service_api_v1_router.urls
 urlpatterns += image_carousel_api_v1_router.urls
-
-print(image_banner_api_v1_router.urls)
